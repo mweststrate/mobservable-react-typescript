@@ -8,10 +8,8 @@
     "experimentalDecorators": true,
     "noLib": false,
     "jsx": "react",
-    "outDir": "dist"
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "node_modules",
-    "static"
-  ]
+  "exclude": ["node_modules", "static"]
 }

@@ -1,40 +1,44 @@
 {
   "name": "mobx-react-typescript-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for MobX + React project with Typescript, ES6 compilation and hot code reloading",
+  "description": "Boilerplate for MobX + React project with Typescript",
   "scripts": {
-    "start": "node server.js"
+    "prettify": "node server.js",
+    "start": "node server.js",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mobxjs/mobx-react-typescript-boilerplate.git"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "mobx",
-    "starter-kit"
-  ],
-  "author": "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
+  "keywords": ["react", "reactjs", "boilerplate", "mobx", "starter-kit"],
+  "author":
+    "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mobxjs/mobx/issues"
   },
   "homepage": "http://mobxjs.github.com/mobx",
   "devDependencies": {
-    "@types/react": "^15.0.39",
-    "@types/react-dom": "^15.5.1",
-    "awesome-typescript-loader": "^3.2.1",
-    "typescript": "^2.4.2",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.6.1"
+    "@types/react": "^16.0.27",
+    "@types/react-dom": "^16.0.3",
+    "awesome-typescript-loader": "^3.4.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.8.2",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "mobx": "^3.2.1",
-    "mobx-react": "^4.2.2",
+    "dotenv": "^4.0.0",
+    "mobx": "^3.4.0",
+    "mobx-react": "^4.3.5",
     "mobx-react-devtools": "^4.2.15",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css}": ["prettier --write", "git add"]
   }
 }
