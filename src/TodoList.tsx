@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   observer,
 } from 'mobx-react';
+import DevTools from 'mobx-react-devtools';
 
 import ObservableTodoStore from './ObservableTodoStore';
 
@@ -20,6 +21,7 @@ export default class TodoList extends React.Component<{store: ObservableTodoStor
         { store.pendingRequests > 0 ? <span>Loading...</span> : null }
         <button onClick={ this.onNewTodo }>New Todo</button>
         <small> (double-click a todo to edit)</small>
+        <DevTools/>
       </div>
     );
   }
@@ -42,7 +44,7 @@ class TodoView extends React.Component<{todo: any, key: any}, {}> {
         />
         { todo.task }
         { todo.assignee
-          ? <small>{ todo.assignee.name }</small>
+          ? <small>(by { todo.assignee.name })</small>
           : null
         }
       </li>
